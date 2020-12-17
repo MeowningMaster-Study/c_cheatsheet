@@ -14,7 +14,7 @@ putchar(c); //вывод
 
 Ввод-вывод строки:
 ```c
-char str[50];
+char str[255];
 gets(str); //ввод
 puts(str); //вывод
 ```
@@ -29,19 +29,27 @@ puts(str); //вывод
 FILE *fp;
 char buff[255];
 
-fp = fopen("/tmp/test.txt", "r");
+fp = fopen("input.txt", "r");
 fscanf(fp, "%s", buff);
-fgets(buff, 255, (FILE*)fp);
-fgets(buff, 255, (FILE*)fp);
+fclose(fp);
+```
+Считать весь файл:
+```c
+FILE *fp;
+int buff_len = 255;
+char buff[buff_len];
+fp = fopen("input.txt", "r");
+while(fgets(buff, buff_len, fp)) {
+    printf("%s\n", buff);
+}
 fclose(fp);
 ```
 Запись:
 ```c
 FILE *fp;
 
-fp = fopen("/tmp/test.txt", "w+");
+fp = fopen("output.txt", "w");
 fprintf(fp, "This is testing for fprintf...\n");
-fputs("This is testing for fputs...\n", fp);
 fclose(fp);
 ```
-Больше инфы тут: [c file input/output](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+Больше инфы тут: [c file I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
