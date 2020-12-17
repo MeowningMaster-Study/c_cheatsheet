@@ -37,6 +37,7 @@ fclose(fp);
 ```c
 FILE *fp;
 int buff_len = 255;
+
 char buff[buff_len];
 fp = fopen("input.txt", "r");
 while(fgets(buff, buff_len, fp)) {
