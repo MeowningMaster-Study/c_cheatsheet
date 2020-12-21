@@ -115,7 +115,10 @@ free(a);
 
 int n, m;
 scanf("%d %d", &n, &m);
-int **a = (int**)malloc(n * sizeof(int*));
+int** a = (int**)malloc(n * sizeof(int*));
+for (int i = 0; i < n; i++) {
+    a[i] = (int*)malloc(m * sizeof(int));
+}
 
 int i, j;
 for (i = 0; i < n; i++) {
@@ -128,6 +131,7 @@ for (i = 0; i < n; i++) {
     for (j = 0; j < m; j++) {
         printf("%d ", a[i][j]);
     }
+    printf("\n");
 }
 
 for (i = 0; i < n; i++) {
