@@ -1,30 +1,30 @@
-# Ввод-вывод
-Библиотека:
+# Ввід-вивід
+Бібліотека:
 ```c
 #include <stdio.h>
 ```
 
 ## Консоль
-Ввод-вывод одного символа:
+Ввід-вивід одного символу:
 ```c
 char c;
-c = getchar(); //ввод
-putchar(c); //вывод
+c = getchar(); //ввід
+putchar(c); //вивід
 ```
 
-Ввод-вывод строки:
+Ввід-вивід строки:
 ```c
 char str[255];
-gets(str); //ввод
-puts(str); //вывод
+gets(str); //ввід
+puts(str); //вивід
 ```
 
-Форматированый ввод-вывод:
-[scanf](https://metanit.com/cpp/c/2.14.php)
-[printf](https://metanit.com/cpp/c/2.4.php)
+Форматований ввід-вивід:
+[scanf](https://cplusplus.com/reference/cstdio/scanf/)
+[printf](https://cplusplus.com/reference/cstdio/printf/)
 
-## Работа с файлами
-Считывание:
+## Робота з файлами
+Зчитування:
 ```c
 FILE *fp;
 char buff[255];
@@ -33,7 +33,7 @@ fp = fopen("input.txt", "r");
 fscanf(fp, "%s", buff);
 fclose(fp);
 ```
-Считать весь файл:
+Зчитати весь файл:
 ```c
 FILE *fp;
 
@@ -45,7 +45,7 @@ while(fgets(buff, buff_len, fp)) {
 }
 fclose(fp);
 ```
-Запись:
+Запис:
 ```c
 FILE *fp;
 
@@ -53,28 +53,28 @@ fp = fopen("output.txt", "w");
 fprintf(fp, "This is testing for fprintf...\n");
 fclose(fp);
 ```
-Больше инфы тут: [c file I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+[c file I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
 
 # Строки
-Библиотека:
+Бібліотека:
 ```c
 #include <string.h>
 ```
 
-Длина строки:
+Довжина строки:
 ```c
 char a[255] = "Program";
 int len = strlen(a);
 //len = 7
 ```
 
-Подстрока:
+Підстрока:
 ```c
 char substr[255];
-strncpy(substr, buff+10, 4); //4 символа начиная с позиции 10
+strncpy(substr, buff+10, 4); // 4 символа починаючи з позиції 10
 ```
 
-Склеивание:
+Конкатенація:
 ```c
 char str[255];
 strcpy(str, "Hello ");
@@ -82,8 +82,8 @@ strcat(str, "world!");
 //str = "Hello world!"
 ```
 
-# Динамические массивы
-## Одномерный
+# Динамічні масиви
+## Одновимірний
 ```c
 #include <stdio.h>
 #include <malloc.h>
@@ -106,7 +106,7 @@ for (i = 0; i < n; i++) {
 free(a);
 ```
 
-## Двумерный
+## Двовимірний
 ```c
 #include <stdio.h>
 #include <malloc.h>
